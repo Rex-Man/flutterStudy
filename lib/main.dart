@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'tab_study_main.dart';
+import 'TabStudy/tab_study.dart';
 
 void main() => runApp(MyApp());
 
