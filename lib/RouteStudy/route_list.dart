@@ -5,13 +5,18 @@ import 'sample_route.dart';
 class RouteStudy extends StatelessWidget {
   @override
   Widget build(Object context) {
-    return ListView(children: [
-      ListTile(
-          title: Text("Sample Route"),
-          onTap: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => SampleRoute()));
-          })
-    ]);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Route Study"),
+      ),
+      body: ListView(children: [
+        ListTile(
+            title: Text("Sample Route"),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SampleRoute()));
+            })
+      ]),
+    );
   }
 }
