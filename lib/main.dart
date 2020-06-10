@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'RouteStudy/route_list.dart';
 import 'TabStudy/tab_study.dart';
 
 void main() => runApp(MyApp());
@@ -61,19 +62,19 @@ class MyHomePage extends StatelessWidget{
     );
   }
   List<Widget> widgets=<Widget>[
-    TabStudy()
+    TabStudy(),RouteStudy()
   ];
 
   // 数据源
   List<String> titleItems = <String>[
-    'Tab Study'
+    'Tab Study','Route Study'
   ];
 
   List<Icon> iconItems = <Icon>[
-    new Icon(Icons.tab), 
+    new Icon(Icons.tab), Icon(Icons.router)
   ];
 
   List<String> subTitleItems = <String>[
-    'subTitle: tab study'
+    'subTitle: tab study','subTitile: route study'
   ];
   
