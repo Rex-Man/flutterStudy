@@ -11,7 +11,10 @@ class RouteStudy extends StatelessWidget {
       ),
       body: ListView(children: [
         ListTile(
+            leading: Icon(Icons.router),
             title: Text("Sample Route"),
+            subtitle:Text("简单route的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => SampleRoute()));
