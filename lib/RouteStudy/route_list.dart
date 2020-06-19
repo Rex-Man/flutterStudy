@@ -18,6 +18,14 @@ class RouteStudy extends StatelessWidget {
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => SampleRoute()));
+            }),
+        ListTile(
+            leading: Icon(Icons.router),
+            title: Text("Named Route"),
+            subtitle:Text("命名route的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/namedroute');
             })
       ]),
     );

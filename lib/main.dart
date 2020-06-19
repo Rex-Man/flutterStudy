@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterStudy/RouteStudy/named_route.dart';
 
+import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/route_list.dart';
 import 'TabStudy/tab_study.dart';
 
@@ -15,6 +17,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      routes: {
+        '/namedroute':(context)=>NamedRoute(),
+        '/namedrouteresult':(context)=> NamedRouteResult(),
+        '/namedrouteparam':(context)=>NamedRouteParam(),
+        '/namedrouteparamresult':(context)=>NamedRouteParamResult()
+      },
     );
   }
 }
