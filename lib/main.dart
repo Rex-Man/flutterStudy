@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
 
 import 'RouteStudy/named_route_param.dart';
+import 'RouteStudy/named_route_return.dart';
 import 'RouteStudy/route_list.dart';
 import 'TabStudy/tab_study.dart';
 
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
         '/namedroute':(context)=>NamedRoute(),
         '/namedrouteresult':(context)=> NamedRouteResult(),
         '/namedrouteparam':(context)=>NamedRouteParam(),
-        '/namedrouteparamresult':(context)=>NamedRouteParamResult()
+        '/namedrouteparamresult':(context)=>NamedRouteParamResult(),
+        '/namedroutereturn':(context)=>NamedRouteReturn()
+        
       },
     );
   }
