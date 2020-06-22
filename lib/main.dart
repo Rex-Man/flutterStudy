@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
 
+import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
 import 'RouteStudy/route_list.dart';
@@ -10,6 +11,10 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  Map routes={
+    '/ongenerateroute':(context) => NamedOnGenerateRoute(),
+    '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments)
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +29,23 @@ class MyApp extends StatelessWidget {
         '/namedrouteparam':(context)=>NamedRouteParam(),
         '/namedrouteparamresult':(context)=>NamedRouteParamResult(),
         '/namedroutereturn':(context)=>NamedRouteReturn()
-        
+      },
+      onGenerateRoute:(RouteSettings settings){
+        final String name=settings.name;
+        final Function pageContentBuilder = this.routes[name];
+        if(pageContentBuilder !=null){
+          if(settings.arguments !=null){
+            final Route route =MaterialPageRoute(
+              builder: (context)=>pageContentBuilder(context,arguments:settings.arguments)
+            );
+            return route;
+          }else{
+            final Route route=MaterialPageRoute(
+              builder: (context) => pageContentBuilder(context)
+            );
+            return route;
+          }
+        }
       },
     );
   }

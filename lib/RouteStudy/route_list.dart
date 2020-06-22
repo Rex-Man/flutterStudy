@@ -53,6 +53,24 @@ class RouteStudy extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, '/namedroutereturn');
             }),
+        ListTile(
+            leading: Icon(Icons.router),
+            title: Text("Named OnGenerate "),
+            subtitle:Text("命名routeGenerate的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/ongenerateroute');
+            }),
+        ListTile(
+            leading: Icon(Icons.router),
+            title: Text("Named OnGenerate Param "),
+            subtitle:Text("命名routeGenerate传递参数的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/ongeneraterouteparam',arguments: {
+                "title":"Pass Param To"
+              });
+            }),
       ]),
     );
   }
