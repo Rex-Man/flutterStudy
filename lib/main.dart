@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
+import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
+import 'DrawerStudy/drawer_study.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
@@ -23,6 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false, // 去掉debug 的标签
       routes: {
         '/namedroute':(context)=>NamedRoute(),
         '/namedrouteresult':(context)=> NamedRouteResult(),
@@ -94,19 +98,19 @@ class MyHomePage extends StatelessWidget{
     );
   }
   List<Widget> widgets=<Widget>[
-    TabStudy(),RouteStudy()
+    TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy()
   ];
 
   // 数据源
   List<String> titleItems = <String>[
-    'Tab Study','Route Study'
+    'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study'
   ];
 
   List<Icon> iconItems = <Icon>[
-    new Icon(Icons.tab), Icon(Icons.router)
+    new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score)
   ];
 
   List<String> subTitleItems = <String>[
-    'subTitle: tab study','subTitile: route study'
+    'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study'
   ];
   
