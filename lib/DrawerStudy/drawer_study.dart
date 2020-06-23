@@ -70,7 +70,15 @@ class DrawerStudy extends StatelessWidget{
                           backgroundImage:AssetImage(
                               "assets/images/head.jpg",
                             ) ,
-                        )
+                        ), 
+                        decoration: BoxDecoration(
+                          image:DecorationImage(
+                            image:AssetImage(
+                                  "assets/images/drawerhead.jpeg",
+                                ),
+                            fit:BoxFit.cover    
+                            ),
+                        ),
                      )
                 ),
                 Divider(),                    //添加横线
