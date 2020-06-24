@@ -47,7 +47,7 @@ class RouteStudy extends StatelessWidget {
             }),
         ListTile(
             leading: Icon(Icons.router),
-            title: Text("Named Route Param"),
+            title: Text("Named Route Return"),
             subtitle:Text("命名route传返回值的例子"),
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {

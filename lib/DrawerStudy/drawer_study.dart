@@ -40,6 +40,10 @@ class DrawerStudy extends StatelessWidget{
                   child: Icon(Icons.home),
                 ),
                 title: Text('我的空间'),
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed('/thirdPage');
+                },
               ),
               Divider(),
               ListTile(
@@ -47,6 +51,10 @@ class DrawerStudy extends StatelessWidget{
                   child: Icon(Icons.bluetooth),
                 ),
                 title: Text('我的蓝牙'),
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed('/thirdPage');
+                },
               ),
               Divider(),
               ListTile(
@@ -54,6 +62,10 @@ class DrawerStudy extends StatelessWidget{
                   child: Icon(Icons.settings),
                 ),
                 title: Text('我的设置'),
+                onTap: (){
+                  Navigator.pop(context);                        // 此操作是先退出侧边栏然后在进入下一页，这样第三页面退回到之前的页面，就不会看见侧面栏了
+                  Navigator.of(context).pushNamed('/thirdPage');
+                },
               ),
               Divider()
             ],
@@ -87,6 +99,10 @@ class DrawerStudy extends StatelessWidget{
                     child: Icon(Icons.home),
                   ),
                   title: Text('我的空间'),
+                  onTap: (){
+                     Navigator.pop(context);                        // 此操作是先退出侧边栏然后在进入下一页，这样第三页面退回到之前的页面，就不会看见侧面栏了
+                     Navigator.of(context).pushNamed('/thirdPage');
+                  },
                 ),
                 Divider(),
                 ListTile(
@@ -94,6 +110,10 @@ class DrawerStudy extends StatelessWidget{
                     child: Icon(Icons.bluetooth),
                   ),
                   title: Text('我的蓝牙'),
+                  onTap: (){
+                     Navigator.pop(context);                        // 此操作是先退出侧边栏然后在进入下一页，这样第三页面退回到之前的页面，就不会看见侧面栏了
+                     Navigator.of(context).pushNamed('/thirdPage');
+                  },
                 ),
                 Divider(),
                 ListTile(
@@ -101,6 +121,10 @@ class DrawerStudy extends StatelessWidget{
                     child: Icon(Icons.settings),
                   ),
                   title: Text('我的设置'),
+                  onTap: (){
+                     Navigator.pop(context);                        // 此操作是先退出侧边栏然后在进入下一页，这样第三页面退回到之前的页面，就不会看见侧面栏了
+                     Navigator.of(context).pushNamed('/thirdPage');
+                  },
                 ),
                 Divider()
             ],

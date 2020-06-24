@@ -11,7 +11,7 @@ class NamedRouteParam extends StatelessWidget{
         child: RaisedButton(
             child: new Text('点我'),
             onPressed: () {
-               Navigator.of(context).pushNamed("/namedrouteparamresult",arguments: {"bodytext":'Named Route Param Result Page'});
+               Navigator.of(context).pushNamed("/namedrouteparamresult",arguments: {"bodytext":'传递参数给result 页面'});
             },
           ),
       ),
@@ -20,9 +20,10 @@ class NamedRouteParam extends StatelessWidget{
 
 }
 class NamedRouteParamResult extends StatelessWidget {
-  String text;
+  
   @override
   Widget build(Object context) {
+    String text;
     dynamic  obj=ModalRoute.of(context).settings.arguments;
      if (obj != null && (obj["bodytext"]!=null||obj["bodytext"]!="")) {
       text = obj["bodytext"];

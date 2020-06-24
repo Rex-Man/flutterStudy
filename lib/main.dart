@@ -4,6 +4,7 @@ import 'package:flutterStudy/RouteStudy/named_route.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
 import 'DrawerStudy/drawer_study.dart';
+import 'DrawerStudy/third_page.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   Map routes={
     '/ongenerateroute':(context) => NamedOnGenerateRoute(),
-    '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments)
+    '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments),
+    '/thirdPage':(context) => ThirdPage()
   };
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
       },
       onGenerateRoute:(RouteSettings settings){
         final String name=settings.name;
-        final Function pageContentBuilder = this.routes[name];
+        final Function pageContentBuilder = routes[name];
         if(pageContentBuilder !=null){
           if(settings.arguments !=null){
             final Route route =MaterialPageRoute(
