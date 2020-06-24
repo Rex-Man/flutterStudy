@@ -3,8 +3,11 @@ import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
+import 'ActionButtonStudy/floating_action_button.dart';
+import 'ButtonStudy/button_study.dart';
 import 'DrawerStudy/drawer_study.dart';
 import 'DrawerStudy/third_page.dart';
+import 'FormControlerStudy/form_controler_study.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
@@ -100,19 +103,19 @@ class MyHomePage extends StatelessWidget{
     );
   }
   List<Widget> widgets=<Widget>[
-    TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy()
+    TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy(),ButtonStudy(),FloatingActionButtonStudy(),FormControllerStudy()
   ];
 
   // 数据源
   List<String> titleItems = <String>[
-    'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study'
+    'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study','Button Study','FloatingActionButton Study','Form Controller Study'
   ];
 
   List<Icon> iconItems = <Icon>[
-    new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score)
+    new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score),Icon(Icons.computer),Icon(Icons.add_shopping_cart),Icon(Icons.airplanemode_active)
   ];
 
   List<String> subTitleItems = <String>[
-    'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study'
+    'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study','subTitile:button study','subTitle:floating action study','subTitle:Form Controller Study'
   ];
   
