@@ -35,55 +35,58 @@ import 'package:flutter/material.dart';
 ///    this.enabledBorder,  //输入框可用时显示的边框，如果errorText不为空的话，该属性无效
 ///    this.border, //正常情况下的border
 ///    this.enabled = true,  //输入框是否可用
-///    this.semanticCounterText,  
+///    this.semanticCounterText,
 ///    this.alignLabelWithHint,
 ///  })
 
-class FormControllerStudy extends StatefulWidget{
+class FormControllerStudy extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() =>_FormControllerStudyState();
+  State<StatefulWidget> createState() => _FormControllerStudyState();
 }
 
-class _FormControllerStudyState extends State<FormControllerStudy>{
+class _FormControllerStudyState extends State<FormControllerStudy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar:AppBar(
-         title:Text('表单学习')
-       ),
-       body:Padding(
-         padding: EdgeInsets.all(20),
-         child: Column(
-           children:[
+        appBar: AppBar(title: Text('表单学习')),
+        body: SingleChildScrollView(                               // 因为不加这个会出现Flutter bottom overflowed 一场
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(children: [
               TextField(),
-              SizedBox(height:20),
+              SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  icon:Icon(Icons.search),
-                  hintText: '请输入信息',
-                  border: OutlineInputBorder()
-                ) ,
+                    icon: Icon(Icons.search),
+                    hintText: '请输入信息',
+                    border: OutlineInputBorder()),
               ),
-              SizedBox(height:20),
+              SizedBox(height: 20),
               TextField(
                 maxLines: 4,
                 decoration: InputDecoration(
-                  hintText: '请输入信息',
-                  border: OutlineInputBorder()
-                ) ,
+                    hintText: '请输入信息', border: OutlineInputBorder()),
               ),
-              SizedBox(height:20),
+              SizedBox(height: 20),
+              TextField(
+                maxLines: 4,
+                decoration: InputDecoration(
+                    hintText: '请输入信息', border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                maxLines: 4,
+                decoration: InputDecoration(
+                    hintText: '请输入信息', border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                   labelText: '输入密码',
-                   border: OutlineInputBorder()
-                ),
-              )
-           ]
-         ),
-       )
-    );
+                    labelText: '输入密码', border: OutlineInputBorder()),
+              ),
+            ]),
+          ),
+        ));
   }
-
 }
