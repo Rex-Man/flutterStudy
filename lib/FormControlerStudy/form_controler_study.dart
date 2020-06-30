@@ -70,22 +70,68 @@ class _FormControllerStudyState extends State<FormControllerStudy> {
               ),
               SizedBox(height: 20),
               TextField(
-                maxLines: 4,
+                obscureText: true, // 设置密码框
                 decoration: InputDecoration(
-                    hintText: '请输入信息', border: OutlineInputBorder()),
+                                            border: OutlineInputBorder()
+                                           ),
               ),
               SizedBox(height: 20),
               TextField(
-                maxLines: 4,
                 decoration: InputDecoration(
-                    hintText: '请输入信息', border: OutlineInputBorder()),
+                                            icon: Icon(Icons.attachment),
+                                            prefixIcon: Icon(Icons.people),
+                                            suffixIcon: Icon(Icons.person),
+                                            labelText: "姓名",
+                                            border: OutlineInputBorder(),
+                                            errorText:"Error !!"
+                                           ),
               ),
               SizedBox(height: 20),
               TextField(
-                obscureText: true,
                 decoration: InputDecoration(
-                    labelText: '输入密码', border: OutlineInputBorder()),
+                  contentPadding: EdgeInsets.all(10.0),
+                  hintText: '圆角边',
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))
+                )
               ),
+              SizedBox(height: 20),
+              TextField(
+                cursorColor: Colors.purple.withOpacity(0.4),  //光标颜色
+                cursorWidth: 10.0,                            //光标宽度
+                cursorRadius: Radius.circular(4.0),           //光标圆角
+              ),
+              SizedBox(height: 20),
+              TextField(
+                style: TextStyle(                         //文字的样式
+                   color :Colors.purple,
+                   fontSize:18.0
+                ),
+                textAlign: TextAlign.center,              //textAlign 为文字起始位置，
+                textDirection: TextDirection.rtl,         //textDirection 文字内容方向。
+                decoration: InputDecoration(
+                    hintText: 'Direction Align style'
+                ),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                maxLength: 10,                           //右下角会标注最大长度和已经输入多长
+                maxLengthEnforced: true,                 // 为true 达到最大字符长度后不可编辑，为false 可继续编辑
+
+                decoration: InputDecoration(
+                    hintText: 'maxlength'
+                ),               
+              ),
+              SizedBox(height: 20),
+              TextField(
+                maxLines: null,                          //最大行数 当为null自动换行，展示多行。 为指定行的时候
+                maxLength:TextField.noMaxLength,         //意思是只在右下角展现输入字符数
+                enableInteractiveSelection: false,       //长按是否出现 剪切，复制， 粘贴 菜单。 false 不会出现
+                textCapitalization: TextCapitalization.sentences, // 首字母是否大写。
+                decoration: InputDecoration(
+                    hintText: 'maxLines'
+                ),               
+              ),
+
             ]),
           ),
         ));
