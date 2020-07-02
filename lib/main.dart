@@ -111,7 +111,7 @@ class MyHomePage extends StatelessWidget{
   // 数据源
   List<String> titleItems = <String>[
     'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study','Button Study','FloatingActionButton Study','Form Controller Study',
-    'Check Box Study'
+    'Check Radio Study'
      
   ];
 
@@ -121,6 +121,6 @@ class MyHomePage extends StatelessWidget{
 
   List<String> subTitleItems = <String>[
     'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study','subTitile:button study','subTitle:floating action study','subTitle:Form Controller Study',
-    'subTitle: check box study'
+    'subTitle: check radio study'
   ];
   
