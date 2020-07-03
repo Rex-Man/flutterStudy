@@ -8,6 +8,7 @@ import 'ActionButtonStudy/floating_action_button.dart';
 import 'ButtonStudy/button_study.dart';
 import 'DrawerStudy/drawer_study.dart';
 import 'DrawerStudy/third_page.dart';
+import 'FormControlerStudy/datetimepicker_study.dart';
 import 'FormControlerStudy/form_controler_study.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
@@ -105,22 +106,23 @@ class MyHomePage extends StatelessWidget{
   }
   List<Widget> widgets=<Widget>[
     TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy(),ButtonStudy(),FloatingActionButtonStudy(),FormControllerStudy(),
-    CheckBoxStudy()
+    CheckBoxStudy(),DateTimePickerStudy()
   ];
 
   // 数据源
   List<String> titleItems = <String>[
     'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study','Button Study','FloatingActionButton Study','Form Controller Study',
-    'Check Radio Study'
+    'Check Radio switch Study','DateTimePicker Study'
      
   ];
 
   List<Icon> iconItems = <Icon>[
     new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score),Icon(Icons.computer),Icon(Icons.add_shopping_cart),Icon(Icons.airplanemode_active),Icon(Icons.check_box)
+    ,Icon(Icons.date_range)
   ];
 
   List<String> subTitleItems = <String>[
     'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study','subTitile:button study','subTitle:floating action study','subTitle:Form Controller Study',
-    'subTitle: check radio study'
+    'subTitle: check radio switch study','date time picker study'
   ];
   

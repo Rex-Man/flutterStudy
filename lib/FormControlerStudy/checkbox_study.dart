@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -16,10 +17,12 @@ class _CheckBoxStudyState extends State<CheckBoxStudy> {
   int radioGroupValue = 2;
   int radioListGroupValue = 1;
   bool _isSwitch=false;
+  bool _isSwitch2=false;
+  bool _isSwitchlistTile=false;
+  bool _isSwitchlistTile2=false;
 
   //FocusNode
   FocusNode _focusNode = new FocusNode();
-
   @override
   void initState() {
     super.initState();
@@ -192,7 +195,68 @@ class _CheckBoxStudyState extends State<CheckBoxStudy> {
             activeColor:Colors.red,   //当 value 是 true 时按钮的背景颜色。也就是开的状态时的颜色
             activeTrackColor:Colors.orange, // 当 value 是 true 时 滑块的颜色
             inactiveThumbColor:Colors.blue, // 当 value 是 false 时 滑块的颜色。也就是开的状态时的颜色
-            inactiveTrackColor:Colors.green //当 value 是 false 时 滑道的颜色
+            inactiveTrackColor:Colors.green, //当 value 是 false 时 滑道的颜色
+            dragStartBehavior:DragStartBehavior.down,//确定处理拖动启动行为的方式
+          ),
+          SizedBox(width: 20),
+          Switch(
+            value: this._isSwitch2,
+            onChanged:(switchValue){
+               Fluttertoast.showToast(msg: "选的$switchValue");
+                setState(() {
+                  _isSwitch2=switchValue;
+                });
+            },
+            activeColor:Colors.red,   //当 value 是 true 时按钮的背景颜色。也就是开的状态时的颜色
+            activeThumbImage:AssetImage("assets/images/cat.png"),
+            onActiveThumbImageError:(s,e){
+                print("show ImageErrorListener issue $s exception: $e");
+            },
+            inactiveThumbImage:AssetImage("assets/images/rabit.png"),
+            onInactiveThumbImageError:(value,e){                          //当图片不存在的时候会调用方法 value  是错误信息 e 是错误赞
+               print("show onInactiveThumbImageError issue $value exception: $e");
+            },
+            dragStartBehavior:DragStartBehavior.down,//确定处理拖动启动行为的方式
+            materialTapTargetSize:MaterialTapTargetSize.shrinkWrap
+          ),
+          SwitchListTile(
+            value: this._isSwitchlistTile,
+            onChanged: (value){
+              setState(() {
+                _isSwitchlistTile=value;
+              });
+            },
+            secondary: Icon(
+                Icons.add_alarm,
+            ),
+            title: new Text("主标题"),
+            subtitle: new Text("标题副s"),
+            dense: false,             ////标题和副标题的紧凑是否一致。 true 紧凑一些，字体小一些，false 字体大一点。
+            activeColor:Colors.red,   //当 value 是 true 时按钮的背景颜色。也就是开的状态时的颜色
+            activeTrackColor:Colors.orange, // 当 value 是 true 时 滑块的颜色
+            inactiveThumbColor:Colors.blue, // 当 value 是 false 时 滑块的颜色。也就是开的状态时的颜色
+            inactiveTrackColor:Colors.green, //当 value 是 false 时 滑道的颜色
+            isThreeLine: true,               //这个属性是是否站用三行。算标题和副标题 为true 的时候一定要有subtitle。
+          ), 
+          SwitchListTile(
+            value: this._isSwitchlistTile2,
+            onChanged: (value){
+              setState(() {
+                _isSwitchlistTile2=value;
+              });
+            },
+            secondary: Icon(
+                Icons.add_alarm,
+            ),
+            title: new Text("主标题"),
+            subtitle: new Text("标题副2"),
+            dense: false,             ////标题和副标题的紧凑是否一致。 true 紧凑一些，字体小一些，false 字体大一点。
+            activeColor:Colors.red,   //当 value 是 true 时按钮的背景颜色。也就是开的状态时的颜色
+            activeThumbImage:AssetImage("assets/images/cat.png"),
+            inactiveThumbImage:AssetImage("assets/images/rabit.png"),
+            isThreeLine: false,               //这个属性是是否站用三行。算标题和副标题 为true 的时候一定要有subtitle。
+            selected: true,                   
+            contentPadding:EdgeInsets.all(5)  //这只是SwitchListTile 控件与周边的边距设置。
           )
         ]));
   }

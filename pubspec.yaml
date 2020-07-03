@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   fluttertoast: ^4.0.0         # https://github.com/PonnamKarthik/FlutterToast
+  date_format: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,8 @@ flutter:
   assets:
      - assets/images/drawerhead.jpeg
      - assets/images/head.jpg
+     - assets/images/cat.png
+     - assets/images/rabit.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
