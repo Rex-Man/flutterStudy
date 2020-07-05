@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   fluttertoast: ^4.0.0         # https://github.com/PonnamKarthik/FlutterToast
   date_format: ^1.0.8
+  flutter_cupertino_date_picker: ^1.0.26+2 # https://github.com/dylanwuzh/flutter-cupertino-date-picker
 
 dev_dependencies:
   flutter_test:
