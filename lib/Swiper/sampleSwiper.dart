@@ -24,7 +24,12 @@ class _State extends State<SampleSwiperStudy> {
         itemBuilder: (BuildContext context,int index){
           return Image.network(imageListUrl[index],fit: BoxFit.fill,);
         },
+        scrollDirection:Axis.vertical,  //滚动方向，设置为Axis.vertical如果需要垂直滚动
+        loop:true,      //无限轮播模式开关
+        duration:300,  //动画时间，单位是毫秒
+        autoplay:true, //自动播放开关.
         itemCount: 3,
+        //index:1,
         pagination: new SwiperPagination(),
         control: new SwiperControl(),
       ),
