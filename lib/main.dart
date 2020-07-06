@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
 import 'package:flutterStudy/FormControlerStudy/checkbox_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
+import 'package:flutterStudy/Swiper/fractionSwiper.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
 import 'ActionButtonStudy/floating_action_button.dart';
@@ -14,6 +15,8 @@ import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
 import 'RouteStudy/route_list.dart';
+import 'Swiper/CustomPaginationSwiper.dart';
+import 'Swiper/phoneSwiper.dart';
 import 'Swiper/sampleSwiper.dart';
 import 'Swiper/swiperliststudy.dart';
 import 'TabStudy/tab_study.dart';
@@ -26,7 +29,9 @@ class MyApp extends StatelessWidget {
     '/ongenerateroute':(context) => NamedOnGenerateRoute(),
     '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments),
     '/thirdPage':(context) => ThirdPage(),
-    '/swiperSample':(context) =>SampleSwiperStudy()
+    '/swiperSample':(context) =>SampleSwiperStudy(),
+    '/swiperCustom':(context) =>CustomPaginationSwiper(),
+    '/swiperPhone':(context) =>PhoneSwiper()
   };
   @override
   Widget build(BuildContext context) {
@@ -42,7 +47,8 @@ class MyApp extends StatelessWidget {
         '/namedrouteresult':(context)=> NamedRouteResult(),
         '/namedrouteparam':(context)=>NamedRouteParam(),
         '/namedrouteparamresult':(context)=>NamedRouteParamResult(),
-        '/namedroutereturn':(context)=>NamedRouteReturn()
+        '/namedroutereturn':(context)=>NamedRouteReturn(),
+        '/fractionSample':(context)=>FractionSwiper()
       },
       onGenerateRoute:(RouteSettings settings){
         final String name=settings.name;
