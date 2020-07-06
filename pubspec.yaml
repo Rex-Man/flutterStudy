@@ -28,9 +28,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
-  fluttertoast: ^4.0.0         # https://github.com/PonnamKarthik/FlutterToast
+  fluttertoast: ^4.0.0         # https://github.com/PonnamKarthik/FlutterToast  toast 组件
   date_format: ^1.0.8
-  flutter_cupertino_date_picker: ^1.0.26+2 # https://github.com/dylanwuzh/flutter-cupertino-date-picker
+  flutter_cupertino_date_picker: ^1.0.26+2 # https://github.com/dylanwuzh/flutter-cupertino-date-picker 日期组件
+  flutter_swiper : ^1.1.6 # https://github.com/best-flutter/flutter_swiper  轮播图
 
 dev_dependencies:
   flutter_test:

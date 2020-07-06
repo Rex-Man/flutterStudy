@@ -14,6 +14,8 @@ import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
 import 'RouteStudy/route_list.dart';
+import 'Swiper/sampleSwiper.dart';
+import 'Swiper/swiperliststudy.dart';
 import 'TabStudy/tab_study.dart';
 
 void main() => runApp(MyApp());
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
   Map routes={
     '/ongenerateroute':(context) => NamedOnGenerateRoute(),
     '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments),
-    '/thirdPage':(context) => ThirdPage()
+    '/thirdPage':(context) => ThirdPage(),
+    '/swiperSample':(context) =>SampleSwiperStudy()
   };
   @override
   Widget build(BuildContext context) {
@@ -106,23 +109,23 @@ class MyHomePage extends StatelessWidget{
   }
   List<Widget> widgets=<Widget>[
     TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy(),ButtonStudy(),FloatingActionButtonStudy(),FormControllerStudy(),
-    CheckBoxStudy(),DateTimePickerStudy()
+    CheckBoxStudy(),DateTimePickerStudy(),SwiperListStudy()
   ];
 
   // 数据源
   List<String> titleItems = <String>[
     'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study','Button Study','FloatingActionButton Study','Form Controller Study',
-    'Check Radio switch Study','DateTimePicker Study'
+    'Check Radio switch Study','DateTimePicker Study','SwiperList Study'
      
   ];
 
   List<Icon> iconItems = <Icon>[
     new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score),Icon(Icons.computer),Icon(Icons.add_shopping_cart),Icon(Icons.airplanemode_active),Icon(Icons.check_box)
-    ,Icon(Icons.date_range)
+    ,Icon(Icons.date_range),Icon(Icons.switch_video)
   ];
 
   List<String> subTitleItems = <String>[
     'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study','subTitile:button study','subTitle:floating action study','subTitle:Form Controller Study',
-    'subTitle: check radio switch study','date time picker study'
+    'subTitle: check radio switch study','subTitle:date time picker study','subTitle: Swiper Study'
   ];
   

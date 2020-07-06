@@ -2,6 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
+import 'package:flutterStudy/FormControlerStudy/cupertino_date_picker/datetime_picker_bottom_sheet.dart';
+import 'package:flutterStudy/FormControlerStudy/cupertino_date_picker/time_picker_in_page.dart';
+
+import 'cupertino_date_picker/date_picker_bottom_sheet.dart';
+import 'cupertino_date_picker/date_picker_in_page.dart';
+import 'cupertino_date_picker/datetime_picker_in_page.dart';
+import 'cupertino_date_picker/time_picker_bottom_sheet.dart';
 
 class DateTimePickerStudy extends StatefulWidget {
   @override
@@ -11,6 +18,7 @@ class DateTimePickerStudy extends StatefulWidget {
 class _DateTimePickerState extends State<DateTimePickerStudy> {
   DateTime selectDate = DateTime.now();
   TimeOfDay selectTime = TimeOfDay.now();
+  TextStyle textStyle = TextStyle(color: Colors.white, fontSize: 16.0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +88,66 @@ class _DateTimePickerState extends State<DateTimePickerStudy> {
                  ],
               )
             ),
-            
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("DatePicker Bottom Sheet", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return DatePickerBottomSheet();
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("DatePicker In Page", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return DatePickerInPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("TimePicker Bottom Sheet", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return TimePickerBottomSheet();
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("TimePicker In Page", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return TimePickerInPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("DateTimePicker Bottom Sheet", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return DateTimePickerBottomSheet();
+                }));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("DateTimePicker In Page", style: textStyle),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return DateTimePickerInPage();
+                }));
+              },
+            ),
          ]
        ),
     );
