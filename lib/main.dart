@@ -16,6 +16,7 @@ import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
 import 'RouteStudy/route_list.dart';
 import 'Swiper/CustomPaginationSwiper.dart';
+import 'Swiper/myFirstSwiper.dart';
 import 'Swiper/phoneSwiper.dart';
 import 'Swiper/sampleSwiper.dart';
 import 'Swiper/swiperliststudy.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
     '/thirdPage':(context) => ThirdPage(),
     '/swiperSample':(context) =>SampleSwiperStudy(),
     '/swiperCustom':(context) =>CustomPaginationSwiper(),
-    '/swiperPhone':(context) =>PhoneSwiper()
+    '/swiperPhone':(context) =>PhoneSwiper(),
+    '/myfirstSwiper':(context) =>MyFirstSwiper()
   };
   @override
   Widget build(BuildContext context) {

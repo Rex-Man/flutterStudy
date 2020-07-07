@@ -58,6 +58,20 @@ flutter:
      - assets/images/swiper2.jpg
      - assets/images/swiper3.jpg
      - assets/images/swiper4.jpg
+     - assets/images/pic1.jpg
+     - assets/images/pic2.jpg
+     - assets/images/pic3.jpg
+     - assets/images/pic4.jpg
+     - assets/images/tou1.jpg
+     - assets/images/tou2.jpg
+     - assets/images/tou3.jpg
+     - assets/images/tou4.jpg
+     - assets/images/tou5.jpg
+     - assets/images/tou6.jpg
+     - assets/images/tou7.jpg
+     - assets/images/tou8.jpg
+     - assets/images/tou9.jpg
+     - assets/images/tou10.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

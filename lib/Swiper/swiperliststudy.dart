@@ -41,6 +41,14 @@ class SwiperListStudy extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, "/swiperPhone");
               }),
+           ListTile(
+              leading: Icon(Icons.wb_incandescent),
+              title: Text("Demo Swiper"),
+              subtitle: Text("Demo轮播图的例子"),
+              trailing: new Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Navigator.pushNamed(context, "/myfirstSwiper");
+              }),
         ],
       ),
     );
