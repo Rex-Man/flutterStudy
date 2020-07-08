@@ -30,8 +30,8 @@ class AlertDialogStudy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlineButton(
-      onPressed: () {
-        showDialog(
+      onPressed: () async {
+        var turnvluereturnvlue = await showDialog(
           context: context,
           barrierDismissible: true, //点击dialog之外是否关闭dialog
           builder: (context) {
@@ -49,6 +49,7 @@ class AlertDialogStudy extends StatelessWidget {
             );
           },
         );
+        print("value ---------------- $turnvluereturnvlue");
       },
       child: Text("Alert Dialog"),
       textColor: Colors.red,
