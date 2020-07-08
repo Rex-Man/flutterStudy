@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
+import 'package:flutterStudy/DialogStudy/dialogstudy_list.dart';
 import 'package:flutterStudy/FormControlerStudy/checkbox_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
 import 'package:flutterStudy/Swiper/fractionSwiper.dart';
@@ -26,14 +27,15 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  Map routes={
-    '/ongenerateroute':(context) => NamedOnGenerateRoute(),
-    '/ongeneraterouteparam':(context,{arguments}) => NamedOnGenerateRouteParam(arguments:arguments),
-    '/thirdPage':(context) => ThirdPage(),
-    '/swiperSample':(context) =>SampleSwiperStudy(),
-    '/swiperCustom':(context) =>CustomPaginationSwiper(),
-    '/swiperPhone':(context) =>PhoneSwiper(),
-    '/myfirstSwiper':(context) =>MyFirstSwiper()
+  Map routes = {
+    '/ongenerateroute': (context) => NamedOnGenerateRoute(),
+    '/ongeneraterouteparam': (context, {arguments}) =>
+        NamedOnGenerateRouteParam(arguments: arguments),
+    '/thirdPage': (context) => ThirdPage(),
+    '/swiperSample': (context) => SampleSwiperStudy(),
+    '/swiperCustom': (context) => CustomPaginationSwiper(),
+    '/swiperPhone': (context) => PhoneSwiper(),
+    '/myfirstSwiper': (context) => MyFirstSwiper()
   };
   @override
   Widget build(BuildContext context) {
@@ -45,26 +47,25 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       debugShowCheckedModeBanner: false, // 去掉debug 的标签
       routes: {
-        '/namedroute':(context)=>NamedRoute(),
-        '/namedrouteresult':(context)=> NamedRouteResult(),
-        '/namedrouteparam':(context)=>NamedRouteParam(),
-        '/namedrouteparamresult':(context)=>NamedRouteParamResult(),
-        '/namedroutereturn':(context)=>NamedRouteReturn(),
-        '/fractionSample':(context)=>FractionSwiper()
+        '/namedroute': (context) => NamedRoute(),
+        '/namedrouteresult': (context) => NamedRouteResult(),
+        '/namedrouteparam': (context) => NamedRouteParam(),
+        '/namedrouteparamresult': (context) => NamedRouteParamResult(),
+        '/namedroutereturn': (context) => NamedRouteReturn(),
+        '/fractionSample': (context) => FractionSwiper()
       },
-      onGenerateRoute:(RouteSettings settings){
-        final String name=settings.name;
+      onGenerateRoute: (RouteSettings settings) {
+        final String name = settings.name;
         final Function pageContentBuilder = routes[name];
-        if(pageContentBuilder !=null){
-          if(settings.arguments !=null){
-            final Route route =MaterialPageRoute(
-              builder: (context)=>pageContentBuilder(context,arguments:settings.arguments)
-            );
+        if (pageContentBuilder != null) {
+          if (settings.arguments != null) {
+            final Route route = MaterialPageRoute(
+                builder: (context) =>
+                    pageContentBuilder(context, arguments: settings.arguments));
             return route;
-          }else{
-            final Route route=MaterialPageRoute(
-              builder: (context) => pageContentBuilder(context)
-            );
+          } else {
+            final Route route = MaterialPageRoute(
+                builder: (context) => pageContentBuilder(context));
             return route;
           }
         }
@@ -72,68 +73,102 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-class MyHomePage extends StatelessWidget{
-  
+
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-        appBar: AppBar(
-          title:Text("Study List For Flutter")
-        ),
-        body: Scrollbar(
-          child: ListView.separated(
+    return Scaffold(
+      appBar: AppBar(title: Text("Study List For Flutter")),
+      body: Scrollbar(
+        child: ListView.separated(
             itemBuilder: (context, item) {
-              return buildListData(context, titleItems[item], iconItems[item], subTitleItems[item],widgets[item]);
+              return buildListData(context, titleItems[item], iconItems[item],
+                  subTitleItems[item], widgets[item]);
             },
-            separatorBuilder: (BuildContext context, int index) => new Divider(),
-            itemCount: iconItems.length
-          ),
-        ),
-     );
-  }
-
-}
-
- Widget buildListData(BuildContext context, String titleItem, Icon iconItem, String subTitleItem,Widget widgetItem) {
-    return new ListTile(
-      leading: iconItem,
-      title: new Text(
-        titleItem,
-        style: TextStyle(fontSize: 18),
+            separatorBuilder: (BuildContext context, int index) =>
+                new Divider(),
+            itemCount: iconItems.length),
       ),
-      subtitle: new Text(
-        subTitleItem,
-      ),
-      trailing: new Icon(Icons.keyboard_arrow_right),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-                      builder:(context)=>widgetItem
-                )
-        );
-      },
-
     );
   }
-  List<Widget> widgets=<Widget>[
-    TabStudy(),RouteStudy(),AppBarStudy(),TabControlerStudy(),DrawerStudy(),ButtonStudy(),FloatingActionButtonStudy(),FormControllerStudy(),
-    CheckBoxStudy(),DateTimePickerStudy(),SwiperListStudy()
-  ];
+}
 
-  // 数据源
-  List<String> titleItems = <String>[
-    'Tab Study','Route Study','App Bar Study','Tab Controler Study','Drawer Study','Button Study','FloatingActionButton Study','Form Controller Study',
-    'Check Radio switch Study','DateTimePicker Study','SwiperList Study'
-     
-  ];
+Widget buildListData(BuildContext context, String titleItem, Icon iconItem,
+    String subTitleItem, Widget widgetItem) {
+  return new ListTile(
+    leading: iconItem,
+    title: new Text(
+      titleItem,
+      style: TextStyle(fontSize: 18),
+    ),
+    subtitle: new Text(
+      subTitleItem,
+    ),
+    trailing: new Icon(Icons.keyboard_arrow_right),
+    onTap: () {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => widgetItem));
+    },
+  );
+}
 
-  List<Icon> iconItems = <Icon>[
-    new Icon(Icons.tab), Icon(Icons.router),Icon(Icons.tab),Icon(Icons.tab),Icon(Icons.score),Icon(Icons.computer),Icon(Icons.add_shopping_cart),Icon(Icons.airplanemode_active),Icon(Icons.check_box)
-    ,Icon(Icons.date_range),Icon(Icons.switch_video)
-  ];
+List<Widget> widgets = <Widget>[
+  TabStudy(),
+  RouteStudy(),
+  AppBarStudy(),
+  TabControlerStudy(),
+  DrawerStudy(),
+  ButtonStudy(),
+  FloatingActionButtonStudy(),
+  FormControllerStudy(),
+  CheckBoxStudy(),
+  DateTimePickerStudy(),
+  SwiperListStudy(),
+  DialogStudyList(),
+];
 
-  List<String> subTitleItems = <String>[
-    'subTitle: tab study','subTitile: route study','subTitle:app bar study','subTitle:tab Controler study','subTitle: drawer study','subTitile:button study','subTitle:floating action study','subTitle:Form Controller Study',
-    'subTitle: check radio switch study','subTitle:date time picker study','subTitle: Swiper Study'
-  ];
-  
+// 数据源
+List<String> titleItems = <String>[
+  'Tab Study',
+  'Route Study',
+  'App Bar Study',
+  'Tab Controler Study',
+  'Drawer Study',
+  'Button Study',
+  'FloatingActionButton Study',
+  'Form Controller Study',
+  'Check Radio switch Study',
+  'DateTimePicker Study',
+  'SwiperList Study',
+  'Dialog Study'
+];
+
+List<Icon> iconItems = <Icon>[
+  Icon(Icons.tab),
+  Icon(Icons.router),
+  Icon(Icons.tab),
+  Icon(Icons.tab),
+  Icon(Icons.score),
+  Icon(Icons.computer),
+  Icon(Icons.add_shopping_cart),
+  Icon(Icons.airplanemode_active),
+  Icon(Icons.check_box),
+  Icon(Icons.date_range),
+  Icon(Icons.switch_video),
+  Icon(Icons.add_alert)
+];
+
+List<String> subTitleItems = <String>[
+  'subTitle: tab study',
+  'subTitile: route study',
+  'subTitle:app bar study',
+  'subTitle:tab Controler study',
+  'subTitle: drawer study',
+  'subTitile:button study',
+  'subTitle:floating action study',
+  'subTitle:Form Controller Study',
+  'subTitle: check radio switch study',
+  'subTitle:date time picker study',
+  'subTitle: Swiper Study',
+  'subTitle:Dialog Study'
+];
