@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-//import 'package:loading_more_list/loading_more_list.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class MyFirstSwiper extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class MyFirstSwiper extends StatelessWidget {
         appBar: AppBar(
           title: Text("Swiper Show"),
         ),
-        body: MainHomePage());
+        body: LoadingCaseForList());
   }
 }
 
@@ -49,7 +49,7 @@ class MainHomePage extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(10, 10, 10, 15),
             child: Container(
               width: double.infinity,
-              height: 200.0,
+              height: 230.0,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return widgetButtonWrap[index];
@@ -60,12 +60,12 @@ class MainHomePage extends StatelessWidget {
                 //control: SwiperControl(),
               ),
             )),
-            
       ],
     );
   }
 }
-///
+
+/// 这个是将图片循环加载拼装
 class ButtonWrap extends StatelessWidget {
   List<String> imagesHead = [
     for (var i = 1; i < 11; i++) "assets/images/tou$i.jpg",
@@ -104,110 +104,72 @@ class ButtonWrap extends StatelessWidget {
   }
 }
 
-// class WaterfallFlowDemo extends StatefulWidget {
-//   @override
-//   _WaterfallFlowDemoState createState() => _WaterfallFlowDemoState();
-// }
+class LoadingCaseForList extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _LoadingCaseForListState();
+  }
+}
 
-// class _WaterfallFlowDemoState extends State<WaterfallFlowDemo> {
-//   TuChongRepository listSourceRepository;
-//   @override
-//   void initState() {
-//     listSourceRepository = TuChongRepository();
-//     super.initState();
-//   }
+class _LoadingCaseForListState extends State<LoadingCaseForList> {
+  RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
+  final List<String> images = [
+    'https://img12.360buyimg.com/mobilecms/s372x372_jfs/t1/141737/18/2293/301136/5f030488Ecd675dac/72a6bf1f1bbfd20e.jpg!q70.dpg.webp',
+    'https://img10.360buyimg.com/mobilecms/s372x372_jfs/t1/33812/12/14323/228178/5d0c89beE2bb012b3/7887b6e272cfcfa1.jpg!q70.dpg.webp',
+    'https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/109708/2/18638/228428/5ec4d0ccEe8c4ed40/b85e74f17821f7c1.jpg!q70.dpg.webp',
+    'https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/131837/28/3775/482675/5f02cdf3Eb12e3e29/b84d51bb9dc19030.png.webp'
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: SmartRefresher(
+      controller: _refreshController,
+      enablePullUp: true,
+      header: WaterDropHeader(),
+      child: CustomScrollView(
+        slivers: <Widget>[
+          SliverToBoxAdapter(
+            child: MainHomePage(),
+          ),
+          SliverList(
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
+              return ListTile(
+                  leading: Image.network(images[index]),
+                  title: Text("Sample Swiper"),
+                  subtitle: Text("简单轮播图的例子"),
+                  trailing: new Icon(Icons.keyboard_arrow_right),
+                  onTap: () {
+                    Navigator.pushNamed(context, "/swiperSample");
+                  });
+            }, childCount: images.length),
+          )
+        ],
+      ),
+      onRefresh: () async {
+        //monitor fetch data from network
+        await Future.delayed(Duration(milliseconds: 1000));
 
-//   @override
-//   void dispose() {
-//     listSourceRepository?.dispose();
-//     super.dispose();
-//   }
+        for (int i = 0; i < 4; i++) {
+          images.add(
+              "https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/129292/16/1879/507301/5ec0f220E9c21bc01/29d197ce78c362cd.jpg!q70.dpg.webp");
+        }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material(
-//       child: Column(
-//         children: <Widget>[
-//           AppBar(
-//             title: const Text('WaterfallFlowDemo'),
-//           ),
-//           Expanded(
-//             child: LayoutBuilder(builder: (BuildContext c, BoxConstraints data) {
-//               final int crossAxisCount = max(
-//                   data.maxWidth ~/ (ScreenUtil.instance.screenWidthDp / 2.0),
-//                   2);
-//               return LoadingMoreList<TuChongItem>(
-//                 ListConfig<TuChongItem>(
-//                   extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-//                     crossAxisCount: crossAxisCount,
-//                     crossAxisSpacing: 5,
-//                     mainAxisSpacing: 5,
-//                   ),
-//                   itemBuilder: buildWaterfallFlowItem,
-//                   sourceList: listSourceRepository,
-//                   padding: const EdgeInsets.all(5.0),
-//                   lastChildLayoutType: LastChildLayoutType.foot,
-//                 ),
-//               );
-//             }),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
-// class TuChongRepository extends LoadingMoreBase<TuChongItem> {
-//   int pageindex = 1;
-//   bool _hasMore = true;
-//   bool forceRefresh = false;
-//   @override
-//   bool get hasMore => (_hasMore && length < 30) || forceRefresh;
+        if (mounted) setState(() {});
+        _refreshController.refreshCompleted();
+      },
+      onLoading: () async {
+        //monitor fetch data from network
+        await Future.delayed(Duration(milliseconds: 1000));
+        for (int i = 0; i < 4; i++) {
+          images.add(
+              "https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/83687/13/2377/198636/5d0b566eE5d7e487c/72e2fbab0fcdde24.jpg!q70.dpg.webp");
+        }
 
-//   @override
-//   Future<bool> refresh([bool clearBeforeRequest = false]) async {
-//     _hasMore = true;
-//     pageindex = 1;
-//     //force to refresh list when you don't want clear list before request
-//     //for the case, if your list already has 20 items.
-//     forceRefresh = !clearBeforeRequest;
-//     var result = await super.refresh(clearBeforeRequest);
-//     forceRefresh = false;
-//     return result;
-//   }
-
-//   @override
-//   Future<bool> loadData([bool isloadMoreAction = false]) async {
-//     String url = "";
-//     if (this.length == 0) {
-//       url = "https://api.tuchong.com/feed-app";
-//     } else {
-//       int lastPostId = this[this.length - 1].postId;
-//       url =
-//           "https://api.tuchong.com/feed-app?post_id=$lastPostId&page=$pageindex&type=loadmore";
-//     }
-//     bool isSuccess = false;
-//     try {
-//       //to show loading more clearly, in your app,remove this
-//       await Future.delayed(Duration(milliseconds: 500));
-
-//       var result = await HttpClientHelper.get(url);
-
-//       var source = TuChongSource.fromJson(json.decode(result.body));
-//       if (pageindex == 1) {
-//         this.clear();
-//       }
-//       for (var item in source.feedList) {
-//         if (item.hasImage && !this.contains(item) && hasMore) this.add(item);
-//       }
-
-//       _hasMore = source.feedList.length != 0;
-//       pageindex++;
-//       isSuccess = true;
-//     } catch (exception, stack) {
-//       isSuccess = false;
-//       print(exception);
-//       print(stack);
-//     }
-//     return isSuccess;
-//   }
-// }
+        if (mounted) setState(() {});
+        _refreshController.loadComplete();
+      },
+    ));
+  }
+}

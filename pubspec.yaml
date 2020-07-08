@@ -34,6 +34,7 @@ dependencies:
   flutter_swiper : ^1.1.6 # https://github.com/best-flutter/flutter_swiper  轮播图
   waterfall_flow: ^2.0.2   #https://github.com/fluttercandies/waterfall_flow 瀑布流
   loading_more_list: ^3.0.0
+  pull_to_refresh: ^1.6.0  #https://github.com/peng8350/flutter_pulltorefresh 下拉刷新
 dev_dependencies:
   flutter_test:
     sdk: flutter
