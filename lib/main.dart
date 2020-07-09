@@ -22,6 +22,7 @@ import 'Swiper/phoneSwiper.dart';
 import 'Swiper/sampleSwiper.dart';
 import 'Swiper/swiperliststudy.dart';
 import 'TabStudy/tab_study.dart';
+import 'WebviewStudy/webview_study.dart';
 
 void main() => runApp(MyApp());
 
@@ -125,6 +126,7 @@ List<Widget> widgets = <Widget>[
   DateTimePickerStudy(),
   SwiperListStudy(),
   DialogStudyList(),
+  WebviewStudy()
 ];
 
 // 数据源
@@ -140,7 +142,8 @@ List<String> titleItems = <String>[
   'Check Radio switch Study',
   'DateTimePicker Study',
   'SwiperList Study',
-  'Dialog Study'
+  'Dialog Study',
+  'Web View Study'
 ];
 
 List<Icon> iconItems = <Icon>[
@@ -155,7 +158,8 @@ List<Icon> iconItems = <Icon>[
   Icon(Icons.check_box),
   Icon(Icons.date_range),
   Icon(Icons.switch_video),
-  Icon(Icons.add_alert)
+  Icon(Icons.add_alert),
+  Icon(Icons.accessibility)
 ];
 
 List<String> subTitleItems = <String>[
@@ -170,5 +174,6 @@ List<String> subTitleItems = <String>[
   'subTitle: check radio switch study',
   'subTitle:date time picker study',
   'subTitle: Swiper Study',
-  'subTitle:Dialog Study'
+  'subTitle:Dialog Study',
+  'subTitle:Webview Study'
 ];

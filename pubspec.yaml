@@ -35,6 +35,9 @@ dependencies:
   waterfall_flow: ^2.0.2   #https://github.com/fluttercandies/waterfall_flow 瀑布流
   loading_more_list: ^3.0.0
   pull_to_refresh: ^1.6.0  #https://github.com/peng8350/flutter_pulltorefresh 下拉刷新
+  dio: ^3.0.9 #https://github.com/flutterchina/dio/blob/master/README-ZH.md
+  flutter_webview_plugin: ^0.3.11 #https://pub.dev/packages/flutter_webview_plugin
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
