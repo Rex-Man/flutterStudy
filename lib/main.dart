@@ -12,6 +12,8 @@ import 'DrawerStudy/drawer_study.dart';
 import 'DrawerStudy/third_page.dart';
 import 'FormControlerStudy/datetimepicker_study.dart';
 import 'FormControlerStudy/form_controler_study.dart';
+import 'QRCodeStudy/barcodescan_study.dart';
+import 'QRCodeStudy/qrflutter_study.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
@@ -126,7 +128,9 @@ List<Widget> widgets = <Widget>[
   DateTimePickerStudy(),
   SwiperListStudy(),
   DialogStudyList(),
-  WebviewStudy()
+  WebviewStudy(),
+  QRFlutterStudy(),
+  BarCodeStudy()
 ];
 
 // 数据源
@@ -143,7 +147,9 @@ List<String> titleItems = <String>[
   'DateTimePicker Study',
   'SwiperList Study',
   'Dialog Study',
-  'Web View Study'
+  'Web View Study',
+  'Show QR CODE Study',
+  'Scan QR CODE Study'
 ];
 
 List<Icon> iconItems = <Icon>[
@@ -159,7 +165,9 @@ List<Icon> iconItems = <Icon>[
   Icon(Icons.date_range),
   Icon(Icons.switch_video),
   Icon(Icons.add_alert),
-  Icon(Icons.accessibility)
+  Icon(Icons.accessibility),
+  Icon(Icons.airplanemode_active),
+  Icon(Icons.alarm_on)
 ];
 
 List<String> subTitleItems = <String>[
@@ -175,5 +183,7 @@ List<String> subTitleItems = <String>[
   'subTitle:date time picker study',
   'subTitle: Swiper Study',
   'subTitle:Dialog Study',
-  'subTitle:Webview Study'
+  'subTitle:Webview Study',
+  'subTitle:Show QRCODE Study',
+  'subTitle:Scan QRCODE Study'
 ];
