@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'changeNotifierProviderStudy.dart';
+import 'demoCode.dart';
 import 'futureProvider_study.dart';
 import 'provider_study.dart';
 
@@ -38,6 +39,15 @@ class ProviderStudyList extends StatelessWidget {
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => FluterProviderStudy()));
+            }),
+        ListTile(
+            leading: Icon(Icons.access_alarms),
+            title: Text("Demo Provider"),
+            subtitle: Text("Demo Provider 的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => DemoProviderStudy()));
             }),
       ]),
     );
