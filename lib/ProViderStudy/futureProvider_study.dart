@@ -1,24 +1,30 @@
+///我们需要给它提供一些显示在UI中的初始数据，还要为它设置要提供值的Future。
+///在Future完成的时候，FutureProvider会通知Consumer重建自己的小部件
+///FutureProvider适用于没有刷新和变更的页面，和FutureBuilder一样的作用
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:provider/provider.dart';
 
 import 'Model/changeNotifierModel.dart';
 
-class ChangeNotifierProviderStudy extends StatelessWidget {
+class FluterProviderStudy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      //ChangeNotifierProvider会监听其提供出去的模型对象中的更改。当有值更改后，它将重建下方所有的Consumer和使用Provider.of<MyModel>(context)监听并获取提供值的地方。
-      create: (_) => ChangeNotifierModel(),
+    return FutureProvider(
+      initialData: ChangeNotifierModel(counter: 0),
+      create: (context) => someAsyncFunctionToGetMyModel(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('change notifier provider'),
+          title: Text('provider'),
         ),
         body: Column(
           children: <Widget>[
             Builder(
               builder: (context) {
-                ChangeNotifierModel _model =Provider.of<ChangeNotifierModel>(context,listen :true);//把Provider.of的监听器设置为false，这样更改后就不会重新构建第一行的text
-                   
+                ChangeNotifierModel _model =
+                    Provider.of<ChangeNotifierModel>(context, listen: true);
                 return Container(
                     margin: const EdgeInsets.only(top: 20),
                     width: MediaQuery.of(context).size.width,
@@ -54,5 +60,11 @@ class ChangeNotifierProviderStudy extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<ChangeNotifierModel> someAsyncFunctionToGetMyModel() async {
+    //  <--- async function
+    await Future.delayed(Duration(seconds: 3));
+    return ChangeNotifierModel(counter: 1);
   }
 }

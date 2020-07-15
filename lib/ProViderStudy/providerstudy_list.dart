@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'changeNotifierProviderStudy.dart';
+import 'futureProvider_study.dart';
 import 'provider_study.dart';
 
 class ProviderStudyList extends StatelessWidget {
@@ -22,22 +23,22 @@ class ProviderStudyList extends StatelessWidget {
             }),
         ListTile(
             leading: Icon(Icons.ac_unit),
-            title: Text("ChangeNotifierProvider Other"),
+            title: Text("ChangeNotifierProvider"),
             subtitle: Text("ChangeNotifierProvider的例子"),
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => ChangeNotifierProviderStudy()));
             }),
-        // ListTile(
-        //     leading: Icon(Icons.access_alarms),
-        //     title: Text("Webview MyHomePage"),
-        //     subtitle: Text("简单webview的例子"),
-        //     trailing: new Icon(Icons.keyboard_arrow_right),
-        //     onTap: () {
-        //       Navigator.of(context)
-        //           .push(MaterialPageRoute(builder: (context) => MyHomePage()));
-        //     }),
+        ListTile(
+            leading: Icon(Icons.access_alarms),
+            title: Text("Future Provider"),
+            subtitle: Text("Future Provider 的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => FluterProviderStudy()));
+            }),
       ]),
     );
   }
