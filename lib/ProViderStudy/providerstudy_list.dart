@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterStudy/ProViderStudy/streamProvider_Study.dart';
 
 import 'changeNotifierProviderStudy.dart';
 import 'demoCode.dart';
@@ -49,6 +50,15 @@ class ProviderStudyList extends StatelessWidget {
             onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => DemoProviderStudy()));
+            }),
+        ListTile(
+            leading: Icon(Icons.access_alarms),
+            title: Text("Stream Provider"),
+            subtitle: Text("Stream Provider 的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => StreamProviderStudy()));
             }),
       ]),
     );
