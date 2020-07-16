@@ -4,6 +4,7 @@ import 'changeNotifierProviderStudy.dart';
 import 'futureProvider_study.dart';
 import 'provider_study.dart';
 
+/// https://www.jianshu.com/p/9cd4b9fb7b44
 class ProviderStudyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,8 +37,8 @@ class ProviderStudyList extends StatelessWidget {
             subtitle: Text("Future Provider 的例子"),
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => FluterProviderStudy()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => FluterProviderStudy()));
             }),
       ]),
     );
