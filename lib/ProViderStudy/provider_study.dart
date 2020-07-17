@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'Model/myModel.dart';
 
-///https://www.jianshu.com/p/9cd4b9fb7b44
-///https://www.lizenghai.com/archives/36668.html
+///
+///
 class ProviderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
