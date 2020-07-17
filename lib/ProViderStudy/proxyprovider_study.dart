@@ -13,7 +13,7 @@ class ProxyProviderStudy extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<PicModel>(create: (context) => PicModel()),
         ProxyProvider<PicModel, SubmitModel>(
-          update: (context, myModel, anotherModel) => SubmitModel(myModel),
+          update: (context, picModel, submitModel) => SubmitModel(picModel),
         ),
       ],
       child: Scaffold(
@@ -51,7 +51,7 @@ class ProxyProviderStudy extends StatelessWidget {
                 return FlatButton(
                     color: Colors.tealAccent,
                     onPressed: model.upLoadPic,
-                    child: Text("提交图片"));
+                    child: Text("changeprovider提交图片"));
               },
             ),
             Consumer<SubmitModel>(
@@ -59,7 +59,7 @@ class ProxyProviderStudy extends StatelessWidget {
                 return FlatButton(
                     color: Colors.tealAccent,
                     onPressed: model.subMit,
-                    child: Text("提交"));
+                    child: Text("Proxy提交"));
               },
             ),
           ],
