@@ -7,6 +7,7 @@ import 'package:flutterStudy/Swiper/fractionSwiper.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
 import 'ActionButtonStudy/floating_action_button.dart';
+import 'AnimationStudy/animationlist_study.dart';
 import 'ButtonStudy/button_study.dart';
 import 'DrawerStudy/drawer_study.dart';
 import 'DrawerStudy/third_page.dart';
@@ -15,6 +16,7 @@ import 'FormControlerStudy/form_controler_study.dart';
 import 'ProViderStudy/providerstudy_list.dart';
 import 'QRCodeStudy/barcodescan_study.dart';
 import 'QRCodeStudy/qrflutter_study.dart';
+import 'RouteStudy/hero_animation_route.dart';
 import 'RouteStudy/named_on_generateroute.dart';
 import 'RouteStudy/named_route_param.dart';
 import 'RouteStudy/named_route_return.dart';
@@ -56,7 +58,8 @@ class MyApp extends StatelessWidget {
         '/namedrouteparam': (context) => NamedRouteParam(),
         '/namedrouteparamresult': (context) => NamedRouteParamResult(),
         '/namedroutereturn': (context) => NamedRouteReturn(),
-        '/fractionSample': (context) => FractionSwiper()
+        '/fractionSample': (context) => FractionSwiper(),
+        '/heroanimationroute': (context) => HeroAnimationRoute()
       },
       onGenerateRoute: (RouteSettings settings) {
         final String name = settings.name;
@@ -132,7 +135,8 @@ List<Widget> widgets = <Widget>[
   WebviewStudy(),
   QRFlutterStudy(),
   BarCodeStudy(),
-  ProviderStudyList()
+  ProviderStudyList(),
+  AnimationListStudy()
 ];
 
 // 数据源
@@ -152,7 +156,8 @@ List<String> titleItems = <String>[
   'Web View Study',
   'Show QR CODE Study',
   'Scan QR CODE Study',
-  'Provider Study'
+  'Provider Study',
+  'Animation Study'
 ];
 
 List<Icon> iconItems = <Icon>[
@@ -171,7 +176,8 @@ List<Icon> iconItems = <Icon>[
   Icon(Icons.accessibility),
   Icon(Icons.airplanemode_active),
   Icon(Icons.alarm_on),
-  Icon(Icons.add_call)
+  Icon(Icons.add_call),
+  Icon(Icons.airline_seat_recline_normal)
 ];
 
 List<String> subTitleItems = <String>[
@@ -190,5 +196,6 @@ List<String> subTitleItems = <String>[
   'subTitle:Webview Study',
   'subTitle:Show QRCODE Study',
   'subTitle:Scan QRCODE Study',
-  'subTitle:Provider Study'
+  'subTitle:Provider Study',
+  'subTitle:Animation Study'
 ];
