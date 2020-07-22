@@ -3,6 +3,7 @@ import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
 import 'package:flutterStudy/DialogStudy/dialogstudy_list.dart';
 import 'package:flutterStudy/FormControlerStudy/checkbox_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
+import 'package:flutterStudy/SliverFamilyStudy/slivercase_study.dart';
 import 'package:flutterStudy/Swiper/fractionSwiper.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
@@ -136,7 +137,8 @@ List<Widget> widgets = <Widget>[
   QRFlutterStudy(),
   BarCodeStudy(),
   ProviderStudyList(),
-  AnimationListStudy()
+  AnimationListStudy(),
+  SliverStudyList()
 ];
 
 // 数据源
@@ -157,7 +159,8 @@ List<String> titleItems = <String>[
   'Show QR CODE Study',
   'Scan QR CODE Study',
   'Provider Study',
-  'Animation Study'
+  'Animation Study',
+  'Sliver Study'
 ];
 
 List<Icon> iconItems = <Icon>[
@@ -177,7 +180,8 @@ List<Icon> iconItems = <Icon>[
   Icon(Icons.airplanemode_active),
   Icon(Icons.alarm_on),
   Icon(Icons.add_call),
-  Icon(Icons.airline_seat_recline_normal)
+  Icon(Icons.airline_seat_recline_normal),
+  Icon(Icons.satellite)
 ];
 
 List<String> subTitleItems = <String>[
@@ -197,5 +201,6 @@ List<String> subTitleItems = <String>[
   'subTitle:Show QRCODE Study',
   'subTitle:Scan QRCODE Study',
   'subTitle:Provider Study',
-  'subTitle:Animation Study'
+  'subTitle:Animation Study',
+  'subTitle:Sliver Study'
 ];
