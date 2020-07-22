@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'animatedbuilder_study.dart';
+import 'animatedswitcher_study.dart';
 import 'animationWidget_study.dart';
 import 'animation_study.dart';
+import 'customeranimationswitch_study.dart';
+import 'staggeranimation_study.dart';
 
 ///AnimationWidget 和 AnimatedBuilder 的好处
 ///不用显式的去添加帧监听器，然后再调用setState() 了，这个好处和AnimatedWidget是一样的。
@@ -55,6 +58,33 @@ class AnimationListStudy extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => AnimatedBuilderStudy()));
+            }),
+        ListTile(
+            leading: Icon(Icons.android),
+            title: Text("Stagger Case"),
+            subtitle: Text("交织动画的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => StaggerRoute()));
+            }),
+        ListTile(
+            leading: Icon(Icons.android),
+            title: Text("Animated Switcher Case"),
+            subtitle: Text("动画切换的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => AnimatedSwitcherCounterRoute()));
+            }),
+        ListTile(
+            leading: Icon(Icons.android),
+            title: Text("Custormer Animated Switcher Case"),
+            subtitle: Text("动画切换的例子"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CustomerAnimatedSwitcher()));
             }),
       ]),
     );
