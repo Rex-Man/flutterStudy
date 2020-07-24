@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'sliverappbar_study.dart';
+
 //https://www.codercto.com/a/34161.html
 //https://www.cnblogs.com/sundaysme/p/12701385.html
 //http://laomengit.com/flutter/widgets/SliverAnimatedList.html
@@ -19,7 +22,7 @@ class SliverStudyList extends StatelessWidget {
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).push(
-                  //MaterialPageRoute(builder: (context) => ProviderPage()));
+                  MaterialPageRoute(builder: (context) => SearchBarDemo()));
             }),
       ]),
     );

@@ -3,7 +3,7 @@ import 'package:flutterStudy/AppBarStudy/appbar_study.dart';
 import 'package:flutterStudy/DialogStudy/dialogstudy_list.dart';
 import 'package:flutterStudy/FormControlerStudy/checkbox_study.dart';
 import 'package:flutterStudy/RouteStudy/named_route.dart';
-import 'package:flutterStudy/SliverFamilyStudy/slivercase_study.dart';
+import 'package:flutterStudy/SliverFamilyStudy/slivercaselist_study.dart';
 import 'package:flutterStudy/Swiper/fractionSwiper.dart';
 import 'package:flutterStudy/TabBartControlerStudy/tabControllerStudy.dart';
 
