@@ -27,8 +27,8 @@ class SliverStudyList extends StatelessWidget {
             }),
         ListTile(
             leading: Icon(Icons.ac_unit),
-            title: Text("Sliver Study Sample"),
-            subtitle: Text("Sliver Study"),
+            title: Text("Sliver Animation List Study"),
+            subtitle: Text("Sliver Animation List"),
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

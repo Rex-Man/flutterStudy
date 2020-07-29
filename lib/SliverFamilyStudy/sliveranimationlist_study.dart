@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 List<int> _list = [];
 var _key = GlobalKey<SliverAnimatedListState>();
 
-class SliverAnimatedListStudy extends StatelessWidget {
+class SliverAnimatedListStudy extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => SliverAnimatedListStudyState();
+}
+
+class SliverAnimatedListStudyState extends State<SliverAnimatedListStudy> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
