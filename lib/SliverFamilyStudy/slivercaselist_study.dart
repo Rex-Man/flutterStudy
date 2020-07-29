@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'sliveranimationlist_study.dart';
 import 'sliverappbar_study.dart';
 
 //https://www.codercto.com/a/34161.html
@@ -22,7 +23,16 @@ class SliverStudyList extends StatelessWidget {
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => SearchBarDemo()));
+                  MaterialPageRoute(builder: (context) => SliverAppBarDemo()));
+            }),
+        ListTile(
+            leading: Icon(Icons.ac_unit),
+            title: Text("Sliver Study Sample"),
+            subtitle: Text("Sliver Study"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SliverAnimatedListStudy()));
             }),
       ]),
     );

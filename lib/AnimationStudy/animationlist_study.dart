@@ -5,6 +5,7 @@ import 'animatedswitcher_study.dart';
 import 'animationWidget_study.dart';
 import 'animation_study.dart';
 import 'customeranimationswitch_study.dart';
+import 'searchdelegate.dart';
 import 'staggeranimation_study.dart';
 
 ///AnimationWidget 和 AnimatedBuilder 的好处
@@ -85,6 +86,15 @@ class AnimationListStudy extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => CustomerAnimatedSwitcher()));
+            }),
+        ListTile(
+            leading: Icon(Icons.ac_unit),
+            title: Text("SearchDelegate Study"),
+            subtitle: Text("SearchDelegate Study"),
+            trailing: new Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => SearchBarDemo()));
             }),
       ]),
     );
