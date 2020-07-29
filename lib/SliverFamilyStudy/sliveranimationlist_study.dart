@@ -18,7 +18,7 @@ class SliverAnimatedListStudyState extends State<SliverAnimatedListStudy> {
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                SliverAnimatedList.of(context);
+                // SliverAnimatedList.of(context);
                 final int _index = _list.length;
                 _list.insert(_index, _index);
                 _key.currentState.insertItem(_index);
