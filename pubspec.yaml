@@ -44,6 +44,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  test: any  
+  flutter_driver:
+    sdk: flutter
+  mockito: ^4.1.0  # https://github.com/dart-lang/mockito  测试用
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
