@@ -10,6 +10,7 @@ class ButtonStudy extends StatelessWidget {
         title: Text("按钮学习"),
         actions: <Widget>[
           IconButton(
+            key: Key("studybutton"),
             onPressed: () {
               print("Icon Button");
             },
@@ -18,11 +19,9 @@ class ButtonStudy extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-            onPressed: (){
-
-            },
-            child: Icon(Icons.add,color:Colors.black,size:40),
-            backgroundColor: Colors.yellow,
+        onPressed: () {},
+        child: Icon(Icons.add, color: Colors.black, size: 40),
+        backgroundColor: Colors.yellow,
       ),
       body: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
