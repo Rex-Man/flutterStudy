@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 ///
 ///RaisedButton 与 FlatButton,OutlineButton 基本上是一样的。
 class ButtonStudy extends StatelessWidget {
+  Key buttonkey;
+  ButtonStudy({this.buttonkey});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,7 @@ class ButtonStudy extends StatelessWidget {
         title: Text("按钮学习"),
         actions: <Widget>[
           IconButton(
-            key: Key("studybutton"),
+            key: buttonkey,
             onPressed: () {
               print("Icon Button");
             },
@@ -129,7 +131,7 @@ class ButtonStudy extends StatelessWidget {
               width: 10,
             ),
             IconButton(
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.accessible),
                 onPressed: () {
                   print("IconButton");
                 })

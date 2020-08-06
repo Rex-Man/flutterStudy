@@ -10,15 +10,18 @@ import 'package:flutterStudy/ButtonStudy/button_study.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Found ButtonStudy Page', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(ButtonStudy());
-
+    Key glkey = Key("studybutton");
+    await tester.pumpWidget(MaterialApp(home: ButtonStudy(buttonkey: glkey)));
+    //Finder iconFinder = find.byKey(glkey);
+    Finder iconFinder = find.byIcon(Icons.search);
+    await tester.tap(iconFinder);
     // Verify that our counter starts at 0.
-    expect(find.byKey(Key("studybutton")), findsOneWidget);
+    expect(iconFinder, findsOneWidget);
 
     // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.account_box));
+    //await tester.tap(find.byIcon(Icons.account_box));
     await tester.pump();
 
     // Verify that our counter has incremented.
