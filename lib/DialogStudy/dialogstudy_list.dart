@@ -36,6 +36,7 @@ class AlertDialogStudy extends StatelessWidget {
           barrierDismissible: true, //点击dialog之外是否关闭dialog
           builder: (context) {
             return AlertDialog(
+              key: Key('alertdialog'),
               title: Text("提示"),
               content: Text("确定要删除吗"),
               actions: <Widget>[
@@ -76,12 +77,13 @@ class SampleDialogStudy extends StatelessWidget {
           barrierDismissible: true, //点击dialog之外是否关闭dialog
           builder: (context) {
             return SimpleDialog(
-              title: Text("Simple Dialog"),
+              title: Text("Simple Dialog Tools"),
               children: <Widget>[
                 SimpleDialogOption(
                   child: Text('Option A'),
                   onPressed: () {
                     Navigator.of(context).pop('Option A');
+                    print("Option A v");
                   },
                 ),
                 SimpleDialogOption(
