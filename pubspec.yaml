@@ -44,7 +44,9 @@ dependencies:
   qr_flutter: ^3.2.0  #https://github.com/lukef/qr.flutter                     生成二维码
   barcode_scan: ^3.0.1 #https://github.com/mintware-de/flutter_barcode_reader  扫描解析二维码
   provider: ^4.3.1  #处理父子组件之间的状态管理
-  
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,7 +54,6 @@ dev_dependencies:
   flutter_driver:
     sdk: flutter
   mockito: ^4.1.0  # https://github.com/dart-lang/mockito  测试用
-  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

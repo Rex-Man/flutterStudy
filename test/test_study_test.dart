@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 /// 所以的test文件都要以_test.dart结尾。这样在执行flutter test 命令的时候才能够被扫描到
 ///http://www.cndartlang.com/874.html
 ///https://pub.dev/packages/test#tagging-tests
@@ -6,7 +8,18 @@
 @TestOn("mac-os") // 这个设置的意思是下面这些test是要在windows的系统下才能运行
 import 'package:test/test.dart';
 
+import 'PinCode.dart';
+
 void main() {
+  //setUpAll 方法是这个UT 在跑其它所有的test之前 初始化用的，只执行一次
+  setUpAll(() async {});
+  //setup 是每执行一个test 都会调用这个方法
+  setUp(() async {
+    print("setUp");
+  });
+  tearDownAll(() async {});
+  tearDown(() async {});
+
   test("String.split() splits the string on the delimiter", () {
     print("test1");
     var string = "foo,bar,baz";
@@ -68,11 +81,29 @@ void main() {
     expect("foo,bar,baz",
         anyOf([contains("foo1"), isNot(startsWith("bar")), endsWith("bar")]));
   }, onPlatform: {
-    'windows': Timeout.factor(2),
+    'mac-os': Timeout.factor(2),
     'browser': [
       Skip('TODO: add browser support'),
       // This will be slow on browsers once it works on them.
       Timeout.factor(2)
     ]
+  });
+  test(".异步测试", () async {
+    print("test11");
+
+    Response response = await Dio().get(
+        "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0=");
+    PinCode newsBean = PinCode.fromJson(response.data);
+    expect("Y1dsMWJHbz0=", newsBean.data.domainId);
+  });
+
+  test("new Future.value() returns the value", () {
+    print("test12");
+
+    expect(
+        Dio().get(
+            "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0="),
+        completion(Dio().get(
+            "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0=")));
   });
 }
