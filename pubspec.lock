@@ -35,7 +35,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.2"
   barcode_scan:
     dependency: "direct main"
     description:
@@ -50,6 +50,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
+  characters:
+    dependency: transitive
+    description:
+      name: characters
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   charcode:
     dependency: transitive
     description:
@@ -77,7 +84,7 @@ packages:
       name: collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.14.12"
+    version: "1.14.13"
   convert:
     dependency: transitive
     description:
@@ -154,7 +161,7 @@ packages:
       name: file
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "5.1.0"
+    version: "5.2.1"
   fixnum:
     dependency: transitive
     description:
@@ -170,9 +177,11 @@ packages:
   flutter_cupertino_date_picker:
     dependency: "direct main"
     description:
-      name: flutter_cupertino_date_picker
-      url: "https://pub.flutter-io.cn"
-    source: hosted
+      path: "."
+      ref: master
+      resolved-ref: "3a6b1513d77636976794b6c64630b7ae219fb371"
+      url: "https://github.com/imshashank/flutter-cupertino-date-picker"
+    source: git
     version: "1.0.26+2"
   flutter_driver:
     dependency: "direct dev"
@@ -284,7 +293,7 @@ packages:
       name: json_rpc_2
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   loading_more_list:
     dependency: "direct main"
     description:
@@ -312,7 +321,7 @@ packages:
       name: matcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.12.6"
+    version: "0.12.8"
   meta:
     dependency: transitive
     description:
@@ -334,13 +343,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.1.1"
-  multi_server_socket:
-    dependency: transitive
-    description:
-      name: multi_server_socket
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.2"
   nested:
     dependency: transitive
     description:
@@ -513,7 +515,7 @@ packages:
       name: stack_trace
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.9.3"
+    version: "1.9.5"
   stream_channel:
     dependency: transitive
     description:
@@ -548,21 +550,21 @@ packages:
       name: test
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.14.7"
+    version: "1.15.2"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.2.16"
+    version: "0.2.17"
   test_core:
     dependency: transitive
     description:
       name: test_core
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.7"
+    version: "0.3.10"
   transformer_page_view:
     dependency: transitive
     description:
@@ -576,7 +578,7 @@ packages:
       name: typed_data
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.6"
+    version: "1.2.0"
   vector_math:
     dependency: transitive
     description:
@@ -641,5 +643,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=2.7.0 <3.0.0"
+  dart: ">=2.9.0-14.0.dev <3.0.0"
   flutter: ">=1.17.0 <2.0.0"
