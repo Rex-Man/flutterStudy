@@ -13,19 +13,16 @@ void main() {
   testWidgets('Found ButtonStudy Page', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     Key glkey = Key("studybutton");
-    await tester.pumpWidget(MaterialApp(home: ButtonStudy(buttonkey: glkey)));
+    //tester.pumpWidget 这个方法相当于无页面加载ui树。
+    // 这里面如果需要用key 的方法来定位元素并获得元素，就要在初始化的时候将这个key 传递进去，然后在外面可以得到他。
     //Finder iconFinder = find.byKey(glkey);
+
+    await tester.pumpWidget(MaterialApp(home: ButtonStudy(buttonkey: glkey)));
     Finder iconFinder = find.byIcon(Icons.search);
     await tester.tap(iconFinder);
     // Verify that our counter starts at 0.
     expect(iconFinder, findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    //await tester.tap(find.byIcon(Icons.account_box));
     await tester.pump();
-
-    // Verify that our counter has incremented.
-    // expect(find.text('0'), findsNothing);
-    // expect(find.text('1'), findsOneWidget);
   });
 }
