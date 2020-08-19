@@ -2,4 +2,4 @@ tags:
   tagsTest:
     timeout: 2x
   dd:
-    timeout: 1x
+    skip: "tags skip test"
