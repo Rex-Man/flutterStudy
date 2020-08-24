@@ -108,7 +108,7 @@ void main() {
     print("test11");
 
     Response response = await Dio().get(
-        "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0=");
+        ;
     PinCode newsBean = PinCode.fromJson(response.data);
     expect("Y1dsMWJHbz0=", newsBean.data.domainId);
   },timeout:Timeout.parse("10s"));
@@ -118,9 +118,9 @@ void main() {
 
     expect(
         Dio().get(
-            "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0="),
+           ),
         completion(Dio().get(
-            "https://iris.lines.coscoshipping.com/mobile/restlink/sales/direct/getPinCode/Y1dsMWJHbz0=")));
+           )));
   },timeout:Timeout.parse("10s"));
   ///expectAsync()可以封装其他的函数，并且回调函数最多允许6个参数，并且不支持命名可选参数。expectAsync()主要有2个作用：
   ///一是断言封装的函数执行确定的次数，如果执行的次数小于count，会一直等待，如果执行的次数小于count，则测试为fail。
@@ -130,20 +130,20 @@ void main() {
     var list = [1,2,3];
    
     
-  //  list.forEach((number){
-  //           expectAsync1((number) {
-  //                  print("expectAsync1 test run");
-  //                  expect(number, equals('b'));
-  //           }, count: 3);
-  //   });
+   list.forEach((number){
+            expectAsync1((number) {
+                   print("expectAsync1 test run");
+                   expect(number, equals('b'));
+            }, count: 3);
+    });
 
-    var stream = new Stream.fromIterable([1, 2, 3]);
+    // var stream = new Stream.fromIterable([1, 2, 3]);
 
-    stream.listen(
-      expectAsync1((number) {
-      print("expectAsync1 less");
-      expect(number, inInclusiveRange(1, 3));
-    }, count: 3));
+    // stream.listen(
+    //   expectAsync1((number) {
+    //   print("expectAsync1 less");
+    //   expect(number, inInclusiveRange(1, 3));
+    // }, count: 3));
   }); 
 
 }
