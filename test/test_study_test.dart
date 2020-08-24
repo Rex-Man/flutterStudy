@@ -127,14 +127,20 @@ void main() {
   ///二是断言封装的函数执行的最大次数，如果超过上限，则测试为fail。如果max为0（默认值），则执行的次数为count；如果max为-1，则执行的次数允许大于count。 
   test("expectAsync study" ,(){
     print("test13");
-    // var list = [1,2,3];
-    // list.map((number) => expectAsync1((number) {
-    //         print("expectAsync1 test run");
-    //         expect(number, equals('b'));
-    // }, count: 3,reason:"show reason"));
+    var list = [1,2,3];
+   
+    
+  //  list.forEach((number){
+  //           expectAsync1((number) {
+  //                  print("expectAsync1 test run");
+  //                  expect(number, equals('b'));
+  //           }, count: 3);
+  //   });
+
     var stream = new Stream.fromIterable([1, 2, 3]);
 
-    stream.listen(expectAsync1((number) {
+    stream.listen(
+      expectAsync1((number) {
       print("expectAsync1 less");
       expect(number, inInclusiveRange(1, 3));
     }, count: 3));
